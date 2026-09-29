@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="?android:attr/actionModeSelectAllDrawable"
+        android:label="InsightHub"
+        android:roundIcon="@drawable/ic_launcher_background"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.InsightHub">
+
+        <activity android:name=".AccelerometerActivity" />
+        <activity android:name=".AverageLightActivity" />
+        <activity android:name=".CaptureActivity" />
+        <activity android:name=".SpeedActivity" />
+        <activity android:name=".LocationActivity" />
+        <activity android:name=".TemperatureActivity" />
+        <activity android:name=".LightActivity" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+    </application>
+
+</manifest>
