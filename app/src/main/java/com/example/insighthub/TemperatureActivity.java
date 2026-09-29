@@ -21,6 +21,10 @@ public class TemperatureActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_temperature);
 
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
         txtTemperature =
                 findViewById(R.id.txtTemperature);
 
@@ -61,6 +65,12 @@ public class TemperatureActivity extends AppCompatActivity {
                 this::updateTemperature,
                 1000
         );
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
     }
 
     @Override

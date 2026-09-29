@@ -32,6 +32,10 @@ public class AccelerometerActivity extends AppCompatActivity {
                 R.layout.activity_accelerometer
         );
 
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
         txtX = findViewById(R.id.txtX);
         txtY = findViewById(R.id.txtY);
         txtZ = findViewById(R.id.txtZ);
@@ -130,6 +134,12 @@ public class AccelerometerActivity extends AppCompatActivity {
                 },
                 100
         );
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
     }
 
     @Override

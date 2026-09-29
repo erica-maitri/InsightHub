@@ -31,6 +31,10 @@ public class CaptureActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_capture);
 
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
         txtReading =
                 findViewById(R.id.txtReading);
 
@@ -180,6 +184,12 @@ public class CaptureActivity extends AppCompatActivity {
                         dateTime;
 
         txtReading.setText(result);
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
     }
 
     @Override

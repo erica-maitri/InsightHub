@@ -30,6 +30,10 @@ public class AverageLightActivity extends AppCompatActivity {
                 R.layout.activity_average_light
         );
 
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
         txtCurrent =
                 findViewById(R.id.txtCurrent);
 
@@ -124,6 +128,12 @@ public class AverageLightActivity extends AppCompatActivity {
                         + readings.size()
                         + " / 5"
         );
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
     }
 
     @Override

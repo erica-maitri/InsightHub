@@ -21,6 +21,10 @@ public class LightActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_light);
 
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
         txtLight = findViewById(R.id.txtLight);
         txtEnvironment =
                 findViewById(R.id.txtEnvironment);
@@ -78,6 +82,12 @@ public class LightActivity extends AppCompatActivity {
                 this::updateReading,
                 500
         );
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
     }
 
     @Override

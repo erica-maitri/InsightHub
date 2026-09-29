@@ -28,6 +28,10 @@ public class SpeedActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_speed);
 
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
         txtLatitude =
                 findViewById(R.id.txtLatitude);
 
@@ -156,6 +160,12 @@ public class SpeedActivity extends AppCompatActivity {
 
             startTracking();
         }
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
     }
 
     @Override

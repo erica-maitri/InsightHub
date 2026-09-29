@@ -27,6 +27,10 @@ public class LocationActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_location);
 
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
         txtLatitude =
                 findViewById(R.id.txtLatitude);
 
@@ -136,6 +140,12 @@ public class LocationActivity extends AppCompatActivity {
 
             startOneLocationReading();
         }
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
     }
 
     @Override
